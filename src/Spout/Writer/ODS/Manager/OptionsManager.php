@@ -34,6 +34,9 @@ class OptionsManager extends OptionsManagerAbstract
             Options::TEMP_FOLDER,
             Options::DEFAULT_ROW_STYLE,
             Options::SHOULD_CREATE_NEW_SHEETS_AUTOMATICALLY,
+            Options::DEFAULT_COLUMN_WIDTH,
+            Options::DEFAULT_ROW_HEIGHT,
+            Options::COLUMN_WIDTHS,
         ];
     }
 
@@ -42,7 +45,7 @@ class OptionsManager extends OptionsManagerAbstract
      */
     protected function setDefaultOptions()
     {
-        $this->setOption(Options::TEMP_FOLDER, sys_get_temp_dir());
+        $this->setOption(Options::TEMP_FOLDER, \sys_get_temp_dir());
         $this->setOption(Options::DEFAULT_ROW_STYLE, $this->styleBuilder->build());
         $this->setOption(Options::SHOULD_CREATE_NEW_SHEETS_AUTOMATICALLY, true);
     }

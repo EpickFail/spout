@@ -22,7 +22,7 @@ class ManagerFactory implements ManagerFactoryInterface
     /** @var InternalEntityFactory */
     protected $entityFactory;
 
-    /** @var HelperFactory $helperFactory */
+    /** @var HelperFactory */
     protected $helperFactory;
 
     /**
@@ -93,7 +93,7 @@ class ManagerFactory implements ManagerFactoryInterface
     {
         $styleRegistry = $this->createStyleRegistry($optionsManager);
 
-        return new StyleManager($styleRegistry);
+        return new StyleManager($styleRegistry, $optionsManager);
     }
 
     /**
